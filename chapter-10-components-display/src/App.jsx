@@ -1,20 +1,22 @@
+import Button from "./components/Button";
+
 const App = () => {
   return (
     <div>
       <div>
-        <Button></Button>
+        <Button primary>click me</Button>
       </div>
       <div>
-        <Button></Button>
+        <Button>hello</Button>
       </div>
       <div>
-        <Button></Button>
+        <Button>what</Button>
       </div>
       <div>
-        <Button></Button>
+        <Button>is</Button>
       </div>
       <div>
-        <Button></Button>
+        <Button>up</Button>
       </div>
     </div>
   );
