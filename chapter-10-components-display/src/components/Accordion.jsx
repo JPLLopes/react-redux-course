@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { GoChevronDown, GoChevronLeft } from "react-icons/go";
+
 const Accordion = ({ items }) => {
   const [expandedItem, setExpandedItem] = useState(-1);
 
