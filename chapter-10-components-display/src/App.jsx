@@ -1,31 +1,35 @@
 import ButtonPage from "./pages/ButtonPage";
-import Accordion from "./components/Accordion";
+import AccordionPage from "./pages/AccordionPage";
+import Dropdown from "./components/Dropdown";
+import { useState } from "react";
+
 const App = () => {
-  const items = [
+  const [selection, setSelection] = useState(null);
+
+  const options = [
     {
-      key: 1,
-      label: "Lorem ipsum dolor sit amet, consectetur adipiscing.",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id dolor nec erat facilisis cursus.",
+      label: "Red",
+      value: "red",
     },
     {
-      key: 2,
-      label: "Lorem ipsum dolor sit amet, consectetur adipiscing.",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id dolor nec erat facilisis cursus.",
+      label: "Green",
+      value: "green",
     },
     {
-      key: 3,
-      label: "Lorem ipsum dolor sit amet, consectetur adipiscing.",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id dolor nec erat facilisis cursus.",
+      label: "Blue",
+      value: "blue",
     },
   ];
 
   return (
     <div>
       <ButtonPage />
-      <Accordion items={items} />
+      <AccordionPage />
+      <Dropdown
+        options={options}
+        value={selection}
+        onChange={(option) => setSelection(option)}
+      />
     </div>
   );
 };
