@@ -1,3 +1,4 @@
+import SortableTable from "../components/SortableTable";
 import Table from "../components/Table";
 
 const TablePage = () => {
@@ -8,12 +9,20 @@ const TablePage = () => {
   // - sort: a function that defines how that columns' data can be sorted by
 
   const config = [
-    { label: "Name", render: (fruit) => fruit.name },
+    {
+      label: "Name",
+      render: (fruit) => fruit.name,
+      sortValue: (fruit) => fruit.name,
+    },
     {
       label: "Color",
       render: (fruit) => <div className={`p-3 m-2 ${fruit.color}`} />,
     },
-    { label: "Quantity", render: (fruit) => fruit.quantity },
+    {
+      label: "Quantity",
+      render: (fruit) => fruit.quantity,
+      sortValue: (fruit) => fruit.quantity,
+    },
   ];
 
   const data = [
@@ -24,8 +33,15 @@ const TablePage = () => {
   ];
 
   return (
-    <div>
-      <Table config={config} data={data}></Table>
+    <div className="flex flex-col items-start">
+      <div className="mb-5">
+        <h1 className="mb-2">Unsortable table</h1>
+        <Table config={config} data={data} />
+      </div>
+      <div>
+        <h1 className="mb-2">Sortable table</h1>
+        <SortableTable config={config} data={data} />
+      </div>
     </div>
   );
 };
