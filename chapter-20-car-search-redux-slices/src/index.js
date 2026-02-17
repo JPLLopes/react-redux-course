@@ -4,6 +4,10 @@ import { Provider } from "react-redux";
 import { store } from "../store";
 import App from "./App";
 
+// Styling
+import "bulma/css/bulma.css";
+import "./styles.css";
+
 const el = document.getElementById("root");
 const root = createRoot(el);
 
